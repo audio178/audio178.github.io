@@ -304,3 +304,25 @@ h1.js-product-name {
 .js-shipping-calculator-calculate:hover {
   background-color: #f3f4f6 !important;
 }
+
+/* Ajuste dos botões de variação com imagem */
+.variant-container .variant-option,
+button.variant-option,
+a.variant-option,
+.swatch-option {
+    padding: 0 !important;
+    border-color: transparent !important;
+    overflow: hidden !important;
+}
+
+/* Faz a imagem preencher todo o espaço do botão */
+.variant-container .variant-option img,
+button.variant-option img,
+a.variant-option img,
+.swatch-option img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: inherit !important;
+    display: block !important;
+}
