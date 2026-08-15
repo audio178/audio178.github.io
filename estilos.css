@@ -1,0 +1,306 @@
+/* ==========================================================================
+   1. FILTROS DA LOJA, CORES E SWATCHES
+   ========================================================================== */
+
+/* Transforma os textos dos filtros em maiúsculas */
+.filters-desktop-content .checkbox-text {
+  text-transform: uppercase !important;
+}
+
+/* Oculta os swatches de cores padrões/duplicados nas vitrines */
+.item-colors,
+.js-item-colors,
+.js-item-colors-container,
+.item-colors-bullets,
+.item-colors-container,
+.item-actions-colors,
+.item-colors-wrapper,
+.item-colors-list,
+.item-color-variant,
+.item-colors-bullet,
+[data-store="item-colors"],
+.js-item-colors-bullet {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Oculta as bolinhas do lado direito nativas da Nuvemshop */
+label[data-filter-name="Cor"] .checkbox-color {
+  display: none !important;
+}
+
+/* Transforma o ícone/checkbox da esquerda na bolinha de cor */
+label[data-filter-name="Cor"] .checkbox-icon {
+  display: inline-block !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  border: 1px solid #CCCCCC !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+  margin-right: 6px !important;
+  background-color: transparent !important;
+}
+
+
+/* ==========================================================================
+   2. MAPEAMENTO COMPLETO DE CORES
+   ========================================================================== */
+
+/* --- TONS DE CINZA E NEUTROS --- */
+label[data-filter-value="Preto" i] .checkbox-icon { background-color: #000000 !important; }
+label[data-filter-value="Preto fosco" i] .checkbox-icon { background-color: #282828 !important; }
+label[data-filter-value="Chumbo" i] .checkbox-icon { background-color: #4A4E51 !important; }
+label[data-filter-value="Cinza escuro" i] .checkbox-icon { background-color: #555555 !important; }
+label[data-filter-value="Cinza" i] .checkbox-icon { background-color: #9E9E9E !important; }
+label[data-filter-value="Prata" i] .checkbox-icon { background-color: #C0C0C0 !important; }
+label[data-filter-value="Cinza claro" i] .checkbox-icon { background-color: #D3D3D3 !important; }
+label[data-filter-value="Platina" i] .checkbox-icon { background-color: #E5E4E2 !important; }
+label[data-filter-value="Gelo" i] .checkbox-icon { background-color: #F0F8FF !important; }
+label[data-filter-value="Branco" i] .checkbox-icon { background-color: #FFFFFF !important; }
+label[data-filter-value="Grafite" i] .checkbox-icon { background-color: #383428 !important; }
+label[data-filter-value="Cimento" i] .checkbox-icon { background-color: #D3D5D0 !important; }
+label[data-filter-value="Taupe" i] .checkbox-icon { background-color: #483D8B !important; }
+label[data-filter-value="Fumê" i] .checkbox-icon { background-color: #A3B1A8 !important; }
+label[data-filter-value="Off white" i] .checkbox-icon { background-color: #FAF9F6 !important; }
+
+/* --- TONS DE AZUL --- */
+label[data-filter-value="Azul escuro" i] .checkbox-icon { background-color: #00008B !important; }
+label[data-filter-value="Azul" i] .checkbox-icon { background-color: #0000DC !important; }
+label[data-filter-value="Azul claro" i] .checkbox-icon { background-color: #87CEEB !important; }
+label[data-filter-value="Azul céu" i] .checkbox-icon { background-color: #87CEFA !important; }
+label[data-filter-value="Azul marinho" i] .checkbox-icon { background-color: #000080 !important; }
+label[data-filter-value="Azul bic" i] .checkbox-icon { background-color: #154284 !important; }
+label[data-filter-value="Azul royal" i] .checkbox-icon { background-color: #4169E1 !important; }
+label[data-filter-value="Azul bebê" i] .checkbox-icon { background-color: #89CFF0 !important; }
+label[data-filter-value="Azul petróleo" i] .checkbox-icon { background-color: #0A747C !important; }
+label[data-filter-value="Azul piscina" i] .checkbox-icon { background-color: #B0E0E6 !important; }
+label[data-filter-value="Azul Tiffany" i] .checkbox-icon,
+label[data-filter-value="Tiffany" i] .checkbox-icon { background-color: #00B3B3 !important; }
+label[data-filter-value="Azul turquesa" i] .checkbox-icon,
+label[data-filter-value="Turquesa" i] .checkbox-icon { background-color: #40E0D0 !important; }
+label[data-filter-value="Ciano" i] .checkbox-icon { background-color: #00FFFF !important; }
+label[data-filter-value="Jeans escuro" i] .checkbox-icon { background-color: #1F4068 !important; }
+label[data-filter-value="Azul jeans" i] .checkbox-icon,
+label[data-filter-value="Jeans" i] .checkbox-icon { background-color: #1565C0 !important; }
+label[data-filter-value="Jeans claro" i] .checkbox-icon { background-color: #90B4CE !important; }
+
+/* --- TONS DE VERDE --- */
+label[data-filter-value="Verde escuro" i] .checkbox-icon { background-color: #005600 !important; }
+label[data-filter-value="Verde bandeira" i] .checkbox-icon { background-color: #008744 !important; }
+label[data-filter-value="Verde" i] .checkbox-icon { background-color: #00FF00 !important; }
+label[data-filter-value="Verde claro" i] .checkbox-icon { background-color: #90EE90 !important; }
+label[data-filter-value="Verde militar" i] .checkbox-icon { background-color: #385E38 !important; }
+label[data-filter-value="Verde musgo" i] .checkbox-icon { background-color: #ADDFAD !important; }
+label[data-filter-value="Verde bebê" i] .checkbox-icon { background-color: #E0F8F1 !important; }
+label[data-filter-value="Verde água" i] .checkbox-icon { background-color: #7FFFD4 !important; }
+label[data-filter-value="Verde neon" i] .checkbox-icon { background-color: #39FF14 !important; }
+label[data-filter-value="Verde limão" i] .checkbox-icon { background-color: #32CD32 !important; }
+label[data-filter-value="Verde oliva" i] .checkbox-icon,
+label[data-filter-value="Oliva" i] .checkbox-icon { background-color: #808000 !important; }
+label[data-filter-value="Pêra" i] .checkbox-icon { background-color: #D1E231 !important; }
+
+/* --- TONS DE MARROM E NEUTROS QUENTES --- */
+label[data-filter-value="Marrom escuro" i] .checkbox-icon { background-color: #4A2511 !important; }
+label[data-filter-value="Chocolate" i] .checkbox-icon { background-color: #7B3F00 !important; }
+label[data-filter-value="Marrom claro" i] .checkbox-icon { background-color: #B25D11 !important; }
+label[data-filter-value="Marrom" i] .checkbox-icon { background-color: #795548 !important; }
+label[data-filter-value="Madeira" i] .checkbox-icon { background-color: #DEB887 !important; }
+label[data-filter-value="Champagne" i] .checkbox-icon { background-color: #F7E7CE !important; }
+label[data-filter-value="Caramelo" i] .checkbox-icon { background-color: #8B3A00 !important; }
+label[data-filter-value="Siena" i] .checkbox-icon { background-color: #A0522D !important; }
+label[data-filter-value="Cobre" i] .checkbox-icon { background-color: #B87333 !important; }
+label[data-filter-value="Nude" i] .checkbox-icon { background-color: #E3C3B2 !important; }
+label[data-filter-value="Natural" i] .checkbox-icon { background-color: #F5F5DC !important; }
+label[data-filter-value="Tabaco" i] .checkbox-icon { background-color: #5C4033 !important; }
+label[data-filter-value="Castanho" i] .checkbox-icon { background-color: #9E7B66 !important; }
+label[data-filter-value="Estanho" i] .checkbox-icon { background-color: #B5A8A0 !important; }
+label[data-filter-value="Pérola" i] .checkbox-icon { background-color: #EAE3D2 !important; }
+label[data-filter-value="Sépia" i] .checkbox-icon { background-color: #704214 !important; }
+label[data-filter-value="Café" i] .checkbox-icon { background-color: #583927 !important; }
+label[data-filter-value="Avelã" i] .checkbox-icon { background-color: #AE937A !important; }
+label[data-filter-value="Bege" i] .checkbox-icon { background-color: #E0D5C1 !important; }
+label[data-filter-value="Areia" i] .checkbox-icon { background-color: #C2B280 !important; }
+label[data-filter-value="Dourado" i] .checkbox-icon,
+label[data-filter-value="Ouro" i] .checkbox-icon { background-color: #DAA520 !important; }
+label[data-filter-value="Âmbar" i] .checkbox-icon { background-color: #FFBF00 !important; }
+
+/* --- TONS DE AMARELO --- */
+label[data-filter-value="Mostarda" i] .checkbox-icon { background-color: #FFDB58 !important; }
+label[data-filter-value="Milho" i] .checkbox-icon { background-color: #FFF8DC !important; }
+label[data-filter-value="Mel" i] .checkbox-icon { background-color: #E3A857 !important; }
+label[data-filter-value="Palha" i] .checkbox-icon { background-color: #E6D690 !important; }
+label[data-filter-value="Cáqui" i] .checkbox-icon,
+label[data-filter-value="Khaki" i] .checkbox-icon { background-color: #F0E68C !important; }
+label[data-filter-value="Creme" i] .checkbox-icon { background-color: #FFFDD0 !important; }
+label[data-filter-value="Marfim" i] .checkbox-icon { background-color: #FFFFF0 !important; }
+label[data-filter-value="Amarelo limão" i] .checkbox-icon { background-color: #FFF700 !important; }
+label[data-filter-value="Amarelo" i] .checkbox-icon { background-color: #FFD700 !important; }
+label[data-filter-value="Amarelo neon" i] .checkbox-icon { background-color: #CCFF00 !important; }
+
+/* --- TONS DE ROSA, ROXO E VIOLETA --- */
+label[data-filter-value="Índigo" i] .checkbox-icon { background-color: #4B0082 !important; }
+label[data-filter-value="Uva" i] .checkbox-icon,
+label[data-filter-value="Violeta" i] .checkbox-icon { background-color: #5A2A82 !important; }
+label[data-filter-value="Lilás" i] .checkbox-icon { background-color: #C8A2C8 !important; }
+label[data-filter-value="Lavanda" i] .checkbox-icon { background-color: #E6E6FA !important; }
+label[data-filter-value="Roxo" i] .checkbox-icon { background-color: #800080 !important; }
+label[data-filter-value="Rosa" i] .checkbox-icon { background-color: #FFC0CB !important; }
+label[data-filter-value="Framboesa" i] .checkbox-icon { background-color: #C72C48 !important; }
+label[data-filter-value="Rosé gold" i] .checkbox-icon,
+label[data-filter-value="Rose gold" i] .checkbox-icon { background-color: #B76E79 !important; }
+label[data-filter-value="Rosa escuro" i] .checkbox-icon { background-color: #E35275 !important; }
+label[data-filter-value="Rosa antigo" i] .checkbox-icon { background-color: #D87093 !important; }
+label[data-filter-value="Melancia" i] .checkbox-icon { background-color: #FC6C85 !important; }
+label[data-filter-value="Rosé" i] .checkbox-icon,
+label[data-filter-value="Rose" i] .checkbox-icon { background-color: #FFC0C7 !important; }
+label[data-filter-value="Pink" i] .checkbox-icon { background-color: #FF1493 !important; }
+label[data-filter-value="Rosa chiclete" i] .checkbox-icon { background-color: #FFB7C5 !important; }
+label[data-filter-value="Rosa neon" i] .checkbox-icon { background-color: #FF6EC7 !important; }
+label[data-filter-value="Rosa bebê" i] .checkbox-icon { background-color: #F4C2C2 !important; }
+label[data-filter-value="Fúcsia" i] .checkbox-icon,
+label[data-filter-value="Fucsia" i] .checkbox-icon,
+label[data-filter-value="Magenta" i] .checkbox-icon { background-color: #FF00FF !important; }
+
+/* --- TONS DE VERMELHO E LARANJA --- */
+label[data-filter-value="Vinho" i] .checkbox-icon { background-color: #581825 !important; }
+label[data-filter-value="Bordô" i] .checkbox-icon,
+label[data-filter-value="Bordo" i] .checkbox-icon { background-color: #800000 !important; }
+label[data-filter-value="Vermelho" i] .checkbox-icon { background-color: #FF0000 !important; }
+label[data-filter-value="Tomate" i] .checkbox-icon { background-color: #FF6347 !important; }
+label[data-filter-value="Salmão" i] .checkbox-icon,
+label[data-filter-value="Salmao" i] .checkbox-icon { background-color: #FA8072 !important; }
+label[data-filter-value="Cereja" i] .checkbox-icon { background-color: #DE3163 !important; }
+label[data-filter-value="Morango" i] .checkbox-icon { background-color: #C83232 !important; }
+label[data-filter-value="Vermelho escuro" i] .checkbox-icon { background-color: #8B0000 !important; }
+label[data-filter-value="Terra" i] .checkbox-icon { background-color: #E2725B !important; }
+label[data-filter-value="Grená" i] .checkbox-icon,
+label[data-filter-value="Grena" i] .checkbox-icon { background-color: #662B2B !important; }
+label[data-filter-value="Marsala" i] .checkbox-icon { background-color: #955251 !important; }
+label[data-filter-value="Mogno" i] .checkbox-icon { background-color: #CD5C5C !important; }
+label[data-filter-value="Goiaba" i] .checkbox-icon { background-color: #E06D53 !important; }
+label[data-filter-value="Coral" i] .checkbox-icon { background-color: #FF7F50 !important; }
+label[data-filter-value="Ferrugem" i] .checkbox-icon,
+label[data-filter-value="Telha" i] .checkbox-icon { background-color: #D35400 !important; }
+label[data-filter-value="Bronze" i] .checkbox-icon { background-color: #CD7F32 !important; }
+label[data-filter-value="Tangerina" i] .checkbox-icon { background-color: #FF8200 !important; }
+label[data-filter-value="Laranja neon" i] .checkbox-icon { background-color: #FF5F1F !important; }
+label[data-filter-value="Laranja" i] .checkbox-icon { background-color: #FFA500 !important; }
+label[data-filter-value="Pêssego" i] .checkbox-icon,
+label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 !important; }
+
+
+/* ==========================================================================
+   3. MELHORIAS VISUAIS NA PÁGINA DE PRODUTO
+   ========================================================================== */
+
+/* Título do produto */
+.product-title,
+h1.js-product-name {
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  color: #333333 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Preço principal */
+.product-price-current,
+.js-price-display {
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: #c8192e !important;
+}
+
+/* Tag de desconto */
+.product-discount-badge,
+.label-primary {
+  background-color: #fee2e2 !important;
+  color: #c8192e !important;
+  padding: 3px 8px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+}
+
+/* Seletores de opções (Tamanho, Estampa, etc.) */
+.product-variant-option,
+.btn-variant,
+.size-selector-btn {
+  border: 1.5px solid #e5e7eb !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  min-width: 44px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.product-variant-option:hover,
+.btn-variant:hover {
+  border-color: #c8192e !important;
+  color: #c8192e !important;
+}
+
+.product-variant-option.selected,
+.product-variant-option.active,
+.btn-variant.active {
+  border-color: #c8192e !important;
+  background-color: #fdf2f2 !important;
+  color: #c8192e !important;
+}
+
+/* Botão "Comprar" */
+.js-prod-submit-form,
+.js-addtocart,
+.btn-buy {
+  background-color: #c8192e !important;
+  border-color: #c8192e !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  transition: background-color 0.2s ease, transform 0.1s ease !important;
+}
+
+.js-prod-submit-form:hover,
+.js-addtocart:hover,
+.btn-buy:hover {
+  background-color: #a51324 !important;
+  border-color: #a51324 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Calculadora de Frete */
+.shipping-calculator-form,
+.js-shipping-calculator-head {
+  display: flex !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+}
+
+.shipping-calculator-form input,
+.js-shipping-input {
+  border: none !important;
+  padding: 10px 14px !important;
+  outline: none !important;
+  width: 100% !important;
+}
+
+.shipping-calculator-form button,
+.js-shipping-calculator-calculate {
+  border: none !important;
+  border-left: 1px solid #d1d5db !important;
+  background-color: #f9fafb !important;
+  padding: 0 16px !important;
+  font-weight: 600 !important;
+  color: #374151 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.shipping-calculator-form button:hover,
+.js-shipping-calculator-calculate:hover {
+  background-color: #f3f4f6 !important;
+}
