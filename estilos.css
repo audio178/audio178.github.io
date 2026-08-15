@@ -326,3 +326,44 @@ a.variant-option img,
     border-radius: inherit !important;
     display: block !important;
 }
+
+/* Prepara o card do produto para servir de referência relativa */
+.item,
+.js-item-product,
+.product-item,
+.js-product-container {
+    position: relative !important;
+}
+
+/* Oculta a tag no fluxo de texto do preço (caso exista duplicate) */
+.price-container .badge-discount,
+.product-price .badge-discount,
+span:has(> font):contains("OFF") {
+    /* Mantenha o estilo de posicionamento aplicado diretamente na badge abaixo */
+}
+
+/* Posiciona a badge de desconto no canto superior esquerdo */
+.badge-discount,
+.discount-pill,
+.product-discount-badge,
+.label-discount,
+[class*="discount"] {
+    position: absolute !important;
+    top: 10px !important;
+    left: 10px !important;
+    bottom: auto !important;
+    right: auto !important;
+    z-index: 10 !important;
+    
+    /* Formatação em estilo selo/quadrado */
+    background-color: #c81938 !important; /* Vermelho do tema */
+    color: #ffffff !important;
+    font-weight: bold !important;
+    font-size: 11px !important;
+    padding: 6px 8px !important;
+    border-radius: 4px !important; /* Use 0px se quiser um quadrado com quinas 100% retas */
+    display: inline-block !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
