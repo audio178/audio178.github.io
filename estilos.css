@@ -347,23 +347,30 @@ a.variant-option img,
 
 
 /* ==========================================================================
-   5. SELO/TAG DE DESCONTO NO CANTO SUPERIOR DO CARD
+   5. SELO/TAG DE DESCONTO NO CANTO SUPERIOR DO CARD (CORRIGIDO)
    ========================================================================== */
 
-/* Prepara o card do produto para servir de referência relativa */
-.item,
-.js-item-product,
-.product-item,
-.js-product-container {
+/* Garante que o container do card seja a referência visual */
+.item-image-container,
+.js-item-image-container,
+.product-image-container,
+.item {
   position: relative !important;
 }
 
-/* Posiciona a badge de desconto no canto superior esquerdo */
-.badge-discount,
-.discount-pill,
-.product-discount-badge,
-.label-discount,
-[class*="discount"] {
+/* Oculta badges vazias ou com 0% de desconto que sobem por engano */
+[class*="discount"]:aria-hidden,
+.badge-discount:empty,
+.label-discount:empty {
+  display: none !important;
+}
+
+/* Posiciona APENAS a tag principal de desconto da imagem */
+.item-image-container .badge-discount,
+.item-image-container .label-discount,
+.js-item-product .badge-discount,
+.product-item .badge-discount,
+.item .badge-discount {
   position: absolute !important;
   top: 10px !important;
   left: 10px !important;
@@ -381,4 +388,15 @@ a.variant-option img,
   line-height: 1 !important;
   text-align: center !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Restaura o fluxo normal para mensagens de promoção/PIX da página de produto */
+.product-detail [class*="discount"],
+.js-product-container [class*="discount"]:not(.badge-discount),
+.product-shipping [class*="discount"],
+.price-container [class*="discount"] {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  box-shadow: none !important;
 }
