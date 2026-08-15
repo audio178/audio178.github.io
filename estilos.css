@@ -347,30 +347,32 @@ a.variant-option img,
 
 
 /* ==========================================================================
-   5. SELO/TAG DE DESCONTO NO CANTO SUPERIOR DO CARD (CORRIGIDO)
+   5. SELO/TAG DE DESCONTO NO CANTO SUPERIOR DO CARD (SINTAXE CORRIGIDA)
    ========================================================================== */
 
-/* Garante que o container do card seja a referência visual */
+/* Garante que o card seja a referência relativa para o selo */
 .item-image-container,
 .js-item-image-container,
 .product-image-container,
-.item {
+.item,
+.item-card {
   position: relative !important;
 }
 
-/* Oculta badges vazias ou com 0% de desconto que sobem por engano */
-[class*="discount"]:aria-hidden,
+/* Oculta marcas de desconto ocultas ou sem conteúdo */
+[aria-hidden="true"],
 .badge-discount:empty,
 .label-discount:empty {
   display: none !important;
 }
 
-/* Posiciona APENAS a tag principal de desconto da imagem */
+/* Posiciona APENAS a tag principal de desconto da imagem na vitrine */
 .item-image-container .badge-discount,
 .item-image-container .label-discount,
 .js-item-product .badge-discount,
 .product-item .badge-discount,
-.item .badge-discount {
+.item .badge-discount,
+.item-card .badge-discount {
   position: absolute !important;
   top: 10px !important;
   left: 10px !important;
@@ -390,9 +392,9 @@ a.variant-option img,
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Restaura o fluxo normal para mensagens de promoção/PIX da página de produto */
+/* Restaura o fluxo normal para caixas de texto e avisos da página interna do produto */
 .product-detail [class*="discount"],
-.js-product-container [class*="discount"]:not(.badge-discount),
+.js-product-container [class*="discount"],
 .product-shipping [class*="discount"],
 .price-container [class*="discount"] {
   position: static !important;
