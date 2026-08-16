@@ -1056,3 +1056,102 @@ a.variant-option img,
   }
 
 }
+
+/* ============================================================
+   PREÇOS — PADRONIZAÇÃO VITRINE + PÁGINA DO PRODUTO
+   ============================================================ */
+
+/* ---------- PREÇO NAS VITRINES ---------- */
+
+.product-item .product-item-price,
+.product-item .product-item-price-container,
+.js-item-product .product-item-price,
+.js-item-product .product-item-price-container,
+.js-product-container .product-item-price,
+.js-product-container .product-item-price-container {
+
+  font-family: inherit !important;
+  color: #c8192e !important;
+  font-weight: 800 !important;
+}
+
+
+/* Preço atual/promocional */
+
+.product-item .product-item-price-current,
+.product-item .product-item-price-container .price-current,
+.product-item .js-price-display,
+.js-item-product .product-item-price-current,
+.js-item-product .product-item-price-container .price-current,
+.js-item-product .js-price-display {
+
+  font-family: inherit !important;
+  color: #c8192e !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+}
+
+
+/* ---------- PREÇO NA PÁGINA DO PRODUTO ---------- */
+
+.product-price-current,
+.js-price-display,
+.product-detail .product-price-current,
+.product-detail .js-price-display {
+
+  font-family: inherit !important;
+  color: #c8192e !important;
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+}
+
+
+/* ---------- PREÇO ANTIGO / RISCADO ---------- */
+
+.product-item .product-item-price-compare,
+.product-item .price-compare,
+.js-item-product .product-item-price-compare,
+.js-item-product .price-compare,
+.product-price-compare,
+.js-price-compare {
+
+  font-family: inherit !important;
+  color: #777777 !important;
+  font-weight: 400 !important;
+  text-decoration: line-through !important;
+}
+
+
+/* ---------- GARANTE O VERMELHO NO PREÇO PROMOCIONAL ---------- */
+
+.product-item-price-container .product-item-price,
+.product-item-price-container .product-item-price-current,
+.product-item-price-container .js-price-display,
+.product-price-container .product-price-current,
+.product-price-container .js-price-display {
+
+  color: #c8192e !important;
+}
+
+
+/* ============================================================
+   MOBILE — PREÇO DA VITRINE
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  .product-item .product-item-price-current,
+  .product-item .product-item-price-container .price-current,
+  .product-item .js-price-display,
+  .js-item-product .product-item-price-current,
+  .js-item-product .product-item-price-container .price-current,
+  .js-item-product .js-price-display {
+
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+  }
+
+}
