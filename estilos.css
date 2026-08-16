@@ -260,7 +260,7 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 .js-shipping-calculator-calculate {
   flex: 0 0 94px !important;
   width: 94px !important;
-  height: 50px !important;
+  height: 52px !important;
 
   margin: 0 !important;
   padding: 0 12px !important;
@@ -298,7 +298,7 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 /* "Formas de envio" */
 .js-shipping-calculator-label-default {
   display: block !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 8px !important;
 
   font-size: 13px !important;
   line-height: 1 !important;
@@ -308,11 +308,12 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 /* Link "Não sei meu CEP" */
 .shipping-calculator-form a {
   display: inline-block !important;
-  margin-top: 8px !important;
+  margin-top: 4px !important;
 
   font-size: 13px !important;
   line-height: 1 !important;
-  color: #7f1d2d !important;
+  background: #7f1d2d !important;
+  color: #ffffff !important;
   text-decoration: underline !important;
 }
 
