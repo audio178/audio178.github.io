@@ -192,108 +192,166 @@ label[data-filter-value="Pêssego" i] .checkbox-icon,
 label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 !important; }
 
 
-/* ==========================================================================
-   3. MELHORIAS VISUAIS NA PÁGINA DE PRODUTO
+/* ========================================================================== 
+   3. CALCULADORA DE FRETE — VISUAL LIMPO E SIMÉTRICO
    ========================================================================== */
 
-/* Título do produto */
-.product-title,
-h1.js-product-name {
-  font-size: 1.75rem !important;
-  font-weight: 700 !important;
-  color: #000000 !important;
-  margin-bottom: 0.75rem !important;
-}
-
-/* Preço principal */
-.product-price-current,
-.js-price-display {
-  font-size: 1.8rem !important;
-  font-weight: 800 !important;
-  color: #A01E2E !important;
-}
-
-/* Seletores de opções em texto (Tamanho, Estampa, etc.) */
-.product-variant-option,
-.btn-variant,
-.size-selector-btn {
-  border: 1.5px solid #e5e7eb !important;
-  border-radius: 6px !important;
-  padding: 8px 16px !important;
-  min-width: 44px !important;
-  font-weight: 600 !important;
-  transition: all 0.2s ease !important;
-  cursor: pointer !important;
-}
-
-.product-variant-option:hover,
-.btn-variant:hover {
-  border-color: #c8192e !important;
-  color: #c8192e !important;
-}
-
-.product-variant-option.selected,
-.product-variant-option.active,
-.btn-variant.active {
-  border-color: #c8192e !important;
-  background-color: #fdf2f2 !important;
-  color: #c8192e !important;
-}
-
-/* Botão "Comprar" */
-.js-prod-submit-form,
-.js-addtocart,
-.btn-buy {
-  background-color: #A01E2E !important;
-  border-color: #c8192e !important;
-  border-radius: 8px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.5px !important;
-  transition: background-color 0.2s ease, transform 0.1s ease !important;
-}
-
-.js-prod-submit-form:hover,
-.js-addtocart:hover,
-.btn-buy:hover {
-  background-color: #a51324 !important;
-  border-color: #a51324 !important;
-  transform: translateY(-1px) !important;
-}
-
-/* Calculadora de Frete */
-.shipping-calculator-form,
+/* Container geral da calculadora */
 .js-shipping-calculator-head {
-  display: flex !important;
-  border: 1px solid #d1d5db !important;
-  border-radius: 8px !important;
-  overflow: hidden !important;
-}
-
-.shipping-calculator-form input,
-.js-shipping-input {
-  border: none !important;
-  padding: 10px 14px !important;
-  outline: none !important;
+  position: relative !important;
+  display: block !important;
   width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
 }
 
+/* Área do formulário */
+.js-shipping-calculator-form,
+.shipping-calculator-form {
+  position: relative !important;
+  display: flex !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-height: 52px !important;
+
+  border: 1px solid #d1d5db !important;
+  border-radius: 7px !important;
+  overflow: hidden !important;
+
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+}
+
+/* Área do CEP */
+.js-shipping-calculator-form .js-shipping-input,
+.shipping-calculator-form .js-shipping-input {
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 50px !important;
+
+  padding: 0 14px !important;
+
+  border: 0 !important;
+  outline: none !important;
+  background: #ffffff !important;
+
+  font-size: 14px !important;
+  line-height: 50px !important;
+  color: #7f1d2d !important;
+  box-sizing: border-box !important;
+}
+
+/* Placeholder */
+.js-shipping-calculator-form .js-shipping-input::placeholder,
+.shipping-calculator-form .js-shipping-input::placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+/* Botão Calcular */
+.js-shipping-calculator-form .js-calculate-shipping,
+.shipping-calculator-form .js-calculate-shipping,
 .shipping-calculator-form button,
 .js-shipping-calculator-calculate {
-  border: none !important;
+  flex: 0 0 94px !important;
+  width: 94px !important;
+  height: 50px !important;
+
+  margin: 0 !important;
+  padding: 0 12px !important;
+
+  border: 0 !important;
   border-left: 1px solid #d1d5db !important;
-  background-color: #f9fafb !important;
-  padding: 0 8px !important;
-  font-weight: 700 !important;
-  color: #374151 !important;
+  border-radius: 0 !important;
+
+  background: #ffffff !important;
+  color: #7f1d2d !important;
+
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 50px !important;
+  text-align: center !important;
+
   cursor: pointer !important;
-  transition: background-color 0.2s ease !important;
+  transition: background-color .2s ease, color .2s ease !important;
 }
 
+.js-shipping-calculator-form .js-calculate-shipping:hover,
+.shipping-calculator-form .js-calculate-shipping:hover,
 .shipping-calculator-form button:hover,
 .js-shipping-calculator-calculate:hover {
-  background-color: #f3f4f6 !important;
+  background: #f8f5f5 !important;
+  color: #a51324 !important;
 }
 
+/* Remove estilos extras dos elementos internos do formulário */
+.shipping-calculator-form input,
+.shipping-calculator-form button {
+  box-sizing: border-box !important;
+}
+
+/* "Formas de envio" */
+.js-shipping-calculator-label-default {
+  display: block !important;
+  margin-bottom: 10px !important;
+
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+  color: #7f1d2d !important;
+}
+
+/* Link "Não sei meu CEP" */
+.shipping-calculator-form a {
+  display: inline-block !important;
+  margin-top: 8px !important;
+
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+  color: #7f1d2d !important;
+  text-decoration: underline !important;
+}
+
+/* Evita que os elementos de ajuda interfiram na linha do CEP */
+.shipping-calculator-form .col-12 {
+  box-sizing: border-box !important;
+}
+
+/* ========================================================================== 
+   AJUSTE MOBILE
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+  .js-shipping-calculator-form,
+  .shipping-calculator-form {
+    min-height: 48px !important;
+  }
+
+  .js-shipping-calculator-form .js-shipping-input,
+  .shipping-calculator-form .js-shipping-input {
+    height: 46px !important;
+    line-height: 46px !important;
+    padding: 0 12px !important;
+    font-size: 13px !important;
+  }
+
+  .js-shipping-calculator-form .js-calculate-shipping,
+  .shipping-calculator-form .js-calculate-shipping,
+  .shipping-calculator-form button,
+  .js-shipping-calculator-calculate {
+    flex-basis: 82px !important;
+    width: 82px !important;
+    height: 46px !important;
+    line-height: 46px !important;
+    font-size: 13px !important;
+  }
+
+}
 
 /* ==========================================================================
    4. AJUSTE DOS BOTÕES DE VARIAÇÃO COM IMAGEM (CORES)
@@ -430,7 +488,7 @@ a.variant-option img,
     top: 8px !important;
     left: 8px !important;
 
-    padding: 4px 7px !important;
+    padding: 4px 5px !important;
 
     font-size: 9px !important;
     line-height: 1 !important;
