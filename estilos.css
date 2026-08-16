@@ -417,3 +417,41 @@ a.variant-option img,
 .label-discount:empty {
     display: none !important;
 }
+
+<script>
+(function () {
+    function removerDescontosZerados() {
+        document.querySelectorAll(
+            '.product-item-discount, .label-discount, .badge-discount'
+        ).forEach(function (elemento) {
+            var texto = elemento.textContent
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toUpperCase();
+
+            if (
+                texto === '0% OFF' ||
+                texto === '0%OFF' ||
+                texto === '0 % OFF' ||
+                texto === '0%'
+            ) {
+                elemento.style.display = 'none';
+            }
+        });
+    }
+
+    // Executa ao carregar
+    removerDescontosZerados();
+
+    // A Nuvemshop pode atualizar a vitrine dinamicamente
+    // quando o cliente troca de categoria, filtro, paginação etc.
+    var observer = new MutationObserver(function () {
+        removerDescontosZerados();
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+})();
+</script>
