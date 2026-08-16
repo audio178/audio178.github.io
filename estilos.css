@@ -196,15 +196,15 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
    3. CALCULADORA DE FRETE — CORREÇÃO ESTRUTURAL IPANEMA
    ========================================================================== */
 
+
 /* ============================================================
    CONTAINER PRINCIPAL
    ============================================================ */
 
 #product-shipping-container .js-shipping-calculator-head,
 .product-shipping-calculator .js-shipping-calculator-head {
-  position: relative !important;
 
-  display: block !important;
+  position: relative !important;
 
   width: 100% !important;
   height: auto !important;
@@ -222,20 +222,181 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 
 
 /* ============================================================
-   FORMULÁRIO
-   IMPORTANTE:
-   O IPANEMA USA position-absolute NATIVAMENTE.
-   Aqui neutralizamos isso.
+   ESTADOS DA CALCULADORA
    ============================================================ */
 
-#product-shipping-container .js-shipping-calculator-form,
-.product-shipping-calculator .js-shipping-calculator-form,
-#product-shipping-container .shipping-calculator-form,
-.product-shipping-calculator .shipping-calculator-form {
+/* Estado formulário */
+
+#product-shipping-container .js-shipping-calculator-head.with-form,
+.product-shipping-calculator .js-shipping-calculator-head.with-form {
+  position: relative !important;
+}
+
+
+/* Estado CEP já calculado */
+
+#product-shipping-container .js-shipping-calculator-head.with-zip,
+.product-shipping-calculator .js-shipping-calculator-head.with-zip {
+  position: relative !important;
+}
+
+
+/* No estado formulário, esconde o bloco do CEP salvo */
+
+#product-shipping-container .js-shipping-calculator-head.with-form
+.js-shipping-calculator-with-zipcode,
+.product-shipping-calculator .js-shipping-calculator-head.with-form
+.js-shipping-calculator-with-zipcode {
+
+  display: none !important;
+}
+
+
+/* No estado CEP salvo, esconde o formulário */
+
+#product-shipping-container .js-shipping-calculator-head.with-zip
+.js-shipping-calculator-form,
+.product-shipping-calculator .js-shipping-calculator-head.with-zip
+.js-shipping-calculator-form {
+
+  display: none !important;
+}
+
+
+/* ============================================================
+   BLOCO "ENTREGAS PARA O CEP"
+   ============================================================ */
+
+#product-shipping-container .js-shipping-calculator-with-zipcode,
+.product-shipping-calculator .js-shipping-calculator-with-zipcode {
 
   position: relative !important;
 
-  display: block !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  width: 100% !important;
+
+  margin: 0 0 14px 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+  opacity: 1 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* Container interno */
+
+#product-shipping-container .js-shipping-calculator-with-zipcode .container,
+.product-shipping-calculator .js-shipping-calculator-with-zipcode .container {
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  max-width: none !important;
+}
+
+
+/* Linha do CEP salvo */
+
+#product-shipping-container .js-shipping-calculator-with-zipcode .row,
+.product-shipping-calculator .js-shipping-calculator-with-zipcode .row {
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* Texto "Entregas para o CEP" */
+
+#product-shipping-container .js-shipping-calculator-with-zipcode .font-small,
+.product-shipping-calculator .js-shipping-calculator-with-zipcode .font-small {
+
+  display: inline-flex !important;
+
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+
+  gap: 4px !important;
+
+  color: #7f1d2d !important;
+
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* CEP */
+
+#product-shipping-container .js-shipping-calculator-current-zip,
+.product-shipping-calculator .js-shipping-calculator-current-zip {
+
+  color: #7f1d2d !important;
+
+  font-weight: 600 !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* Botão para alterar CEP */
+
+#product-shipping-container .js-shipping-calculator-change-zipcode,
+.product-shipping-calculator .js-shipping-calculator-change-zipcode {
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-height: 28px !important;
+
+  margin: 0 !important;
+  padding: 4px 9px !important;
+
+  border: 1px solid #7f1d2d !important;
+  border-radius: 4px !important;
+
+  background: #ffffff !important;
+  color: #7f1d2d !important;
+
+  font-size: 11px !important;
+  font-weight: 500 !important;
+
+  line-height: 1 !important;
+
+  text-decoration: none !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ============================================================
+   FORMULÁRIO
+   ============================================================ */
+
+#product-shipping-container .js-shipping-calculator-form,
+.product-shipping-calculator .js-shipping-calculator-form {
+
+  position: relative !important;
 
   width: 100% !important;
   height: auto !important;
@@ -250,7 +411,10 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
   overflow: visible !important;
 
   opacity: 1 !important;
+
   transform: none !important;
+
+  box-sizing: border-box !important;
 }
 
 
@@ -263,6 +427,8 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 
   display: block !important;
 
+  position: relative !important;
+
   width: 100% !important;
 
   margin: 0 0 9px 0 !important;
@@ -274,6 +440,25 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
   font-weight: 500 !important;
 
   line-height: 1.4 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* Outros textos da calculadora não devem ocupar a linha do título */
+
+#product-shipping-container .js-shipping-calculator-label,
+#product-shipping-container .js-free-shipping-message,
+.product-shipping-calculator .js-shipping-calculator-label,
+.product-shipping-calculator .js-free-shipping-message {
+
+  position: relative !important;
+
+  display: block !important;
+
+  margin-bottom: 9px !important;
+
+  line-height: 1.4 !important;
 }
 
 
@@ -281,21 +466,8 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
    LINHA CEP + BOTÃO
    ============================================================ */
 
-/*
- * O Ipanema utiliza:
- *
- * .form-row
- *   ├── .col-5  → CEP
- *   └── .col-6  → CALCULAR
- *
- * Vamos transformar essa linha numa única caixa perfeitamente
- * alinhada.
- */
-
 #product-shipping-container .js-shipping-calculator-form .form-row,
-.product-shipping-calculator .js-shipping-calculator-form .form-row,
-#product-shipping-container .shipping-calculator-form .form-row,
-.product-shipping-calculator .shipping-calculator-form .form-row {
+.product-shipping-calculator .js-shipping-calculator-form .form-row {
 
   display: flex !important;
 
@@ -324,9 +496,7 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
    ============================================================ */
 
 #product-shipping-container .js-shipping-calculator-form .form-row > .col-5,
-.product-shipping-calculator .js-shipping-calculator-form .form-row > .col-5,
-#product-shipping-container .shipping-calculator-form .form-row > .col-5,
-.product-shipping-calculator .shipping-calculator-form .form-row > .col-5 {
+.product-shipping-calculator .js-shipping-calculator-form .form-row > .col-5 {
 
   flex: 1 1 auto !important;
 
@@ -368,7 +538,9 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
   font-size: 14px !important;
   font-weight: 400 !important;
 
-  line-height: normal !important;
+  line-height: 48px !important;
+
+  vertical-align: middle !important;
 
   box-shadow: none !important;
 
@@ -391,15 +563,12 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
    ============================================================ */
 
 #product-shipping-container .js-shipping-calculator-form .form-row > .col-6,
-.product-shipping-calculator .js-shipping-calculator-form .form-row > .col-6,
-#product-shipping-container .shipping-calculator-form .form-row > .col-6,
-.product-shipping-calculator .shipping-calculator-form .form-row > .col-6 {
+.product-shipping-calculator .js-shipping-calculator-form .form-row > .col-6 {
 
   flex: 0 0 94px !important;
 
   width: 94px !important;
   max-width: 94px !important;
-
   min-width: 94px !important;
 
   height: 48px !important;
@@ -412,7 +581,7 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 
 
 /* ============================================================
-   BOTÃO CALCULAR
+   BOTÃO "CALCULAR"
    ============================================================ */
 
 #product-shipping-container .js-calculate-shipping,
@@ -440,7 +609,7 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
   font-size: 14px !important;
   font-weight: 600 !important;
 
-  line-height: normal !important;
+  line-height: 1 !important;
   text-align: center !important;
 
   white-space: nowrap !important;
@@ -457,12 +626,19 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 }
 
 
-/* Texto interno do botão */
+/* ============================================================
+   TEXTO "CALCULAR"
+   ============================================================ */
 
 #product-shipping-container .js-calculate-shipping-wording,
 .product-shipping-calculator .js-calculate-shipping-wording {
 
-  display: block !important;
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  height: 100% !important;
 
   margin: 0 !important;
   padding: 0 !important;
@@ -478,7 +654,77 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 }
 
 
-/* Estado hover */
+/* ============================================================
+   TEXTO "CALCULANDO"
+   ============================================================ */
+
+#product-shipping-container .js-calculating-shipping-wording,
+.product-shipping-calculator .js-calculating-shipping-wording {
+
+  display: none !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #ffffff !important;
+
+  font-size: inherit !important;
+  font-weight: inherit !important;
+
+  line-height: 1 !important;
+
+  text-align: center !important;
+}
+
+
+/* Durante o cálculo, mostrar SOMENTE "Calculando" */
+
+#product-shipping-container .js-calculate-shipping:disabled
+.js-calculate-shipping-wording,
+.product-shipping-calculator .js-calculate-shipping:disabled
+.js-calculate-shipping-wording {
+
+  display: none !important;
+}
+
+
+#product-shipping-container .js-calculate-shipping:disabled
+.js-calculating-shipping-wording,
+.product-shipping-calculator .js-calculate-shipping:disabled
+.js-calculating-shipping-wording {
+
+  display: inline-flex !important;
+}
+
+
+/* Caso o tema utilize aria-busy */
+
+#product-shipping-container .js-calculate-shipping[aria-busy="true"]
+.js-calculate-shipping-wording,
+.product-shipping-calculator .js-calculate-shipping[aria-busy="true"]
+.js-calculate-shipping-wording {
+
+  display: none !important;
+}
+
+
+#product-shipping-container .js-calculate-shipping[aria-busy="true"]
+.js-calculating-shipping-wording,
+.product-shipping-calculator .js-calculate-shipping[aria-busy="true"]
+.js-calculating-shipping-wording {
+
+  display: inline-flex !important;
+}
+
+
+/* ============================================================
+   HOVER
+   ============================================================ */
 
 #product-shipping-container .js-calculate-shipping:hover,
 .product-shipping-calculator .js-calculate-shipping:hover {
@@ -498,6 +744,7 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
   display: inline-flex !important;
 
   align-items: center !important;
+  justify-content: center !important;
 
   min-height: 22px !important;
 
@@ -530,16 +777,42 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 
 
 /* ============================================================
+   ÁREA DE RESULTADOS
+   ============================================================ */
+
+#product-shipping-container .js-shipping-calculator-response,
+.product-shipping-calculator .js-shipping-calculator-response {
+
+  position: relative !important;
+
+  width: 100% !important;
+
+  margin-top: 14px !important;
+  margin-bottom: 16px !important;
+  padding: 0 !important;
+
+  clear: both !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ============================================================
    MOBILE
    ============================================================ */
 
 @media (max-width: 767px) {
+
+  /* Caixa */
 
   #product-shipping-container .js-shipping-calculator-form .form-row,
   .product-shipping-calculator .js-shipping-calculator-form .form-row {
 
     min-height: 44px !important;
   }
+
+
+  /* Campo CEP */
 
   #product-shipping-container .js-shipping-input,
   .product-shipping-calculator .js-shipping-input {
@@ -549,7 +822,12 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
     padding: 0 12px !important;
 
     font-size: 13px !important;
+
+    line-height: 44px !important;
   }
+
+
+  /* Área do botão */
 
   #product-shipping-container .js-shipping-calculator-form .form-row > .col-6,
   .product-shipping-calculator .js-shipping-calculator-form .form-row > .col-6 {
@@ -563,6 +841,9 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
     height: 44px !important;
   }
 
+
+  /* Botão */
+
   #product-shipping-container .js-calculate-shipping,
   .product-shipping-calculator .js-calculate-shipping {
 
@@ -571,6 +852,9 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
     font-size: 13px !important;
   }
 
+
+  /* Não sei meu CEP */
+
   #product-shipping-container .js-shipping-calculator-form a,
   .product-shipping-calculator .js-shipping-calculator-form a {
 
@@ -578,7 +862,48 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 
     font-size: 11px !important;
   }
+
+
+  /* Texto do CEP calculado */
+
+  #product-shipping-container .js-shipping-calculator-with-zipcode .font-small,
+  .product-shipping-calculator .js-shipping-calculator-with-zipcode .font-small {
+
+    font-size: 12px !important;
+  }
+
+
+  /* Botão alterar CEP */
+
+  #product-shipping-container .js-shipping-calculator-change-zipcode,
+  .product-shipping-calculator .js-shipping-calculator-change-zipcode {
+
+    min-height: 26px !important;
+
+    padding: 4px 7px !important;
+
+    font-size: 10px !important;
+  }
+
+
+  /* Espaçamento */
+
+  #product-shipping-container .js-shipping-calculator-with-zipcode,
+  .product-shipping-calculator .js-shipping-calculator-with-zipcode {
+
+    margin-bottom: 12px !important;
+  }
+
+
+  /* Resultados */
+
+  #product-shipping-container .js-shipping-calculator-response,
+  .product-shipping-calculator .js-shipping-calculator-response {
+
+    margin-top: 12px !important;
+  }
 }
+
 
 /* ==========================================================================
    4. AJUSTE DOS BOTÕES DE VARIAÇÃO COM IMAGEM (CORES)
@@ -640,68 +965,72 @@ a.variant-option img,
 .product-item,
 .js-item-product,
 .js-product-container {
-    position: relative !important;
+  position: relative !important;
 }
 
 /* Remove o desconto do bloco de preço */
 .product-item-price-container .product-item-discount {
-    position: absolute !important;
-    top: 12px !important;
-    left: 12px !important;
-    z-index: 999 !important;
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 999 !important;
 
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-    background: rgba(200,25,56,.92) !important;
-    color: #ffffff !important;
+  background: rgba(200,25,56,.92) !important;
+  color: #ffffff !important;
 
-    padding: 6px 10px !important;
-    border-radius: 6px !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
 
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
 
-    box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
 }
+
 
 /* ---------- PÁGINA DO PRODUTO ---------- */
 
 /* Esconde o desconto ao lado do preço */
 .product-offer-label {
-    display: none !important;
+  display: none !important;
 }
+
 
 /* Se o tema possuir selo nativo */
 .label-discount,
 .badge-discount,
 [class*="label-discount"],
 [class*="badge-discount"] {
-    position: absolute !important;
-    top: 12px !important;
-    left: 12px !important;
-    z-index: 999 !important;
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 999 !important;
 
-    background: rgba(200,25,56,.92) !important;
-    color: #ffffff !important;
+  background: rgba(200,25,56,.92) !important;
+  color: #ffffff !important;
 
-    padding: 6px 10px !important;
-    border-radius: 6px !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
 
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
 
-    box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
 }
+
 
 /* Oculta selos vazios */
 .badge-discount:empty,
 .label-discount:empty {
-    display: none !important;
+  display: none !important;
 }
+
 
 /* ============================================================
    SELO DE DESCONTO — AJUSTE SOMENTE NO MOBILE
@@ -712,6 +1041,7 @@ a.variant-option img,
   .product-item-price-container .product-item-discount,
   .label-discount,
   .badge-discount {
+
     top: 8px !important;
     left: 8px !important;
 
