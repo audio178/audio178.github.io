@@ -265,7 +265,7 @@ h1.js-product-name {
 .js-shipping-calculator-head {
   display: flex !important;
   border: 1px solid #d1d5db !important;
-  border-radius: 6px !important;
+  border-radius: 8px !important;
   overflow: hidden !important;
 }
 
@@ -282,8 +282,8 @@ h1.js-product-name {
   border: none !important;
   border-left: 1px solid #d1d5db !important;
   background-color: #f9fafb !important;
-  padding: 0 16px !important;
-  font-weight: 600 !important;
+  padding: 0 8px !important;
+  font-weight: 700 !important;
   color: #374151 !important;
   cursor: pointer !important;
   transition: background-color 0.2s ease !important;
