@@ -1155,3 +1155,116 @@ a.variant-option img,
   }
 
 }
+
+/* ============================================================
+   ESTABILIZAÇÃO DAS IMAGENS VERTICAIS DA LANDING PAGE
+   Tema Ipanema / Nuvemshop
+   ============================================================ */
+
+/*
+ * O Ipanema utiliza:
+ *
+ * .media-visual
+ *    └── .banner-image-container-cropped-vertical
+ *          └── picture
+ *                └── img
+ *
+ * A imagem original é 3181 x 4321.
+ * Reservamos o espaço antes do carregamento para evitar
+ * que a imagem ocupe a viewport durante alguns instantes.
+ */
+
+.media-visual.banner-image-container-cropped-vertical {
+  position: relative !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  aspect-ratio: 3181 / 4321 !important;
+
+  overflow: hidden !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* O picture deve respeitar o espaço previamente reservado */
+
+.media-visual.banner-image-container-cropped-vertical picture {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* A imagem nunca poderá impor sua dimensão natural ao layout */
+
+.media-visual.banner-image-container-cropped-vertical img {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* Mantém overlay e placeholder dentro da área da imagem */
+
+.media-visual.banner-image-container-cropped-vertical .placeholder,
+.media-visual.banner-image-container-cropped-vertical .media-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: 100% !important;
+}
+
+
+/* ============================================================
+   PROTEÇÃO CONTRA O FLASH DURANTE O LAZY LOAD
+   ============================================================ */
+
+/*
+ * O src inicial é um GIF de 1x1.
+ * Não permitimos que o estado intermediário altere
+ * a dimensão do container.
+ */
+
+.media-visual.banner-image-container-cropped-vertical img.lazyload,
+.media-visual.banner-image-container-cropped-vertical img.lazyloading,
+.media-visual.banner-image-container-cropped-vertical img.lazyloaded {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  .media-visual.banner-image-container-cropped-vertical {
+    width: 100% !important;
+    aspect-ratio: 3181 / 4321 !important;
+  }
+
+}
