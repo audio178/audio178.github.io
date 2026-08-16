@@ -416,3 +416,41 @@ a.variant-option img,
 .label-discount:empty {
   display: none !important;
 }
+
+/* ==========================================================
+   SELO DE DESCONTO - PÁGINA DE PRODUTO
+   ========================================================== */
+
+/* Faz o container da foto virar referência */
+.product-image-container,
+.product-image-slider,
+.js-product-image-container,
+.product-gallery,
+.product-image {
+    position: relative !important;
+}
+
+/* Reposiciona o selo */
+.product-offer-label {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    z-index: 999 !important;
+
+    background: rgba(200, 25, 56, .92) !important;
+    color: #fff !important;
+
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
+}
+
+/* Mantém o percentual branco */
+.product-offer-label .js-offer-percentage {
+    color: inherit !important;
+}
