@@ -347,98 +347,30 @@ a.variant-option img,
 
 
 /* ==========================================================================
-   5. REESTRUTURAÇÃO DO SELO DE DESCONTO (VITRINE E PÁGINA DE PRODUTO)
+   5. SELOS DE DESCONTO - VITRINE E PRODUTO
    ========================================================================== */
 
-/* Prepara os containers de imagem (vitrine e página interna) para ancoragem */
-.item-image-container,
-.js-item-image-container,
-.item-card,
-.item,
-.product-image-container,
-.product-image-slider,
-.js-product-image-container {
-  position: relative !important;
-}
+/* ---------- VITRINES E CATEGORIAS ---------- */
 
-/* Reorienta o container do preço da vitrine para posicionamento absoluto */
-.item-price,
-.price-container,
-.product-price-container {
-  position: relative !important;
-}
-
-/* Transforma o texto do % OFF em um selo quadrado fixo no topo da foto (VITRINE) */
-.item-price span:not(.js-price-display):not(.js-compare-price-display),
-.price-container span:not(.js-price-display):not(.js-compare-price-display),
-.item-info span[class*="discount"] {
-  position: absolute !important;
-  bottom: 100% !important;
-  top: -280px !important; /* Move a tag para cima, sobre o topo da foto */
-  left: 10px !important;
-  z-index: 25 !important;
-  
-  background-color: #c81938 !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  font-size: 11px !important;
-  padding: 6px 8px !important;
-  border-radius: 4px !important;
-  line-height: 1 !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
-  display: inline-block !important;
-  white-space: nowrap !important;
-}
-
-/* Formata o selo de desconto nativo (caso exista na página de produto ou vitrine) */
-[class*="label-discount"],
-[class*="badge-discount"] {
-  display: inline-block !important;
-  position: absolute !important;
-  top: 12px !important;
-  left: 12px !important;
-  right: auto !important;
-  bottom: auto !important;
-  z-index: 30 !important;
-  
-  background-color: #c81938 !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  font-size: 11px !important;
-  padding: 6px 8px !important;
-  border-radius: 4px !important;
-  line-height: 1 !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Oculta blocos de desconto que estiverem vazios */
-.badge-discount:empty,
-.label-discount:empty {
-  display: none !important;
-}
-
-/* ==========================================================
-   SELO DE DESCONTO - PÁGINA DE PRODUTO
-   ========================================================== */
-
-/* Faz o container da foto virar referência */
-.product-image-container,
-.product-image-slider,
-.js-product-image-container,
-.product-gallery,
-.product-image {
+.product-item,
+.js-item-product,
+.js-product-container {
     position: relative !important;
 }
 
-/* Reposiciona o selo */
-.product-offer-label {
+/* Remove o desconto do bloco de preço */
+.product-item-price-container .product-item-discount {
     position: absolute !important;
     top: 12px !important;
     left: 12px !important;
     z-index: 999 !important;
 
-    background: rgba(200, 25, 56, .92) !important;
-    color: #fff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: rgba(200,25,56,.92) !important;
+    color: #ffffff !important;
 
     padding: 6px 10px !important;
     border-radius: 6px !important;
@@ -450,7 +382,38 @@ a.variant-option img,
     box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
 }
 
-/* Mantém o percentual branco */
-.product-offer-label .js-offer-percentage {
-    color: inherit !important;
+/* ---------- PÁGINA DO PRODUTO ---------- */
+
+/* Esconde o desconto ao lado do preço */
+.product-offer-label {
+    display: none !important;
+}
+
+/* Se o tema possuir selo nativo */
+.label-discount,
+.badge-discount,
+[class*="label-discount"],
+[class*="badge-discount"] {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    z-index: 999 !important;
+
+    background: rgba(200,25,56,.92) !important;
+    color: #ffffff !important;
+
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
+}
+
+/* Oculta selos vazios */
+.badge-discount:empty,
+.label-discount:empty {
+    display: none !important;
 }
