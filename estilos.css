@@ -347,32 +347,43 @@ a.variant-option img,
 
 
 /* ==========================================================================
-   5. SELO/TAG DE DESCONTO NO CANTO SUPERIOR DO CARD (SINTAXE CORRIGIDA)
+   5. SELO/TAG DE DESCONTO NO CARD (VERSÃO FINAL)
    ========================================================================== */
 
-/* Garante que o card seja a referência relativa para o selo */
+/* 1. Garante que a foto do produto seja a referência para o selo */
 .item-image-container,
 .js-item-image-container,
 .product-image-container,
+.item-image,
 .item,
 .item-card {
   position: relative !important;
 }
 
-/* Oculta marcas de desconto ocultas ou sem conteúdo */
-[aria-hidden="true"],
-.badge-discount:empty,
-.label-discount:empty {
+/* 2. Oculta o selo de desconto duplicado que fica ABAIXO do card (na área de texto/preço) */
+.item-info .badge-discount,
+.item-info .label-discount,
+.item-info [class*="discount"],
+.item-description .badge-discount,
+.item-description .label-discount,
+.js-item-info .badge-discount,
+.js-item-info .label-discount,
+.item-price .badge-discount,
+.item-price .label-discount,
+.price-container .label-discount {
   display: none !important;
 }
 
-/* Posiciona APENAS a tag principal de desconto da imagem na vitrine */
+/* 3. Posiciona e estiliza APENAS a tag principal que fica sobre a FOTO */
 .item-image-container .badge-discount,
 .item-image-container .label-discount,
-.js-item-product .badge-discount,
-.product-item .badge-discount,
-.item .badge-discount,
-.item-card .badge-discount {
+.item-image .badge-discount,
+.item-image .label-discount,
+.js-item-product > .badge-discount,
+.product-item > .badge-discount,
+.item > .badge-discount,
+.item-card > .badge-discount {
+  display: inline-block !important;
   position: absolute !important;
   top: 10px !important;
   left: 10px !important;
@@ -386,19 +397,13 @@ a.variant-option img,
   font-size: 11px !important;
   padding: 6px 8px !important;
   border-radius: 4px !important;
-  display: inline-block !important;
   line-height: 1 !important;
   text-align: center !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Restaura o fluxo normal para caixas de texto e avisos da página interna do produto */
-.product-detail [class*="discount"],
-.js-product-container [class*="discount"],
-.product-shipping [class*="discount"],
-.price-container [class*="discount"] {
-  position: static !important;
-  top: auto !important;
-  left: auto !important;
-  box-shadow: none !important;
+/* 4. Oculta selos vazios para não ficar um quadrado vermelho sobrando */
+.badge-discount:empty,
+.label-discount:empty {
+  display: none !important;
 }
