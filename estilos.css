@@ -269,8 +269,8 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
   border-left: 1px solid #d1d5db !important;
   border-radius: 0 !important;
 
-  background: #ffffff !important;
-  color: #7f1d2d !important;
+  background: #7f1d2d !important;
+  color: #ffffff !important;
 
   font-size: 14px !important;
   font-weight: 500 !important;
@@ -285,8 +285,8 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 .shipping-calculator-form .js-calculate-shipping:hover,
 .shipping-calculator-form button:hover,
 .js-shipping-calculator-calculate:hover {
-  background: #f8f5f5 !important;
-  color: #a51324 !important;
+  background: #4D000D !important;
+  color: #ffffff !important;
 }
 
 /* Remove estilos extras dos elementos internos do formulário */
@@ -300,8 +300,8 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
   display: block !important;
   margin-bottom: 10px !important;
 
-  font-size: 14px !important;
-  line-height: 1.3 !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
   color: #7f1d2d !important;
 }
 
@@ -310,8 +310,8 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
   display: inline-block !important;
   margin-top: 8px !important;
 
-  font-size: 12px !important;
-  line-height: 1.3 !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
   color: #7f1d2d !important;
   text-decoration: underline !important;
 }
