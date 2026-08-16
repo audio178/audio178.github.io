@@ -346,73 +346,46 @@ a.variant-option img,
 }
 
 
-/* ==========================================================================
-   5. REESTRUTURAÇÃO DO SELO DE DESCONTO (VITRINE E PÁGINA DE PRODUTO)
-   ========================================================================== */
+/* ==========================================================
+   SELO DE DESCONTO NA FOTO DO PRODUTO
+   ========================================================== */
 
-/* Prepara os containers de imagem (vitrine e página interna) para ancoragem */
-.item-image-container,
-.js-item-image-container,
-.item-card,
-.item,
+/* Garante que o container da imagem seja referência */
 .product-image-container,
 .product-image-slider,
-.js-product-image-container {
-  position: relative !important;
+.js-product-image-container,
+.item-image-container,
+.js-item-image-container {
+    position: relative !important;
 }
 
-/* Reorienta o container do preço da vitrine para posicionamento absoluto */
-.item-price,
-.price-container,
-.product-price-container {
-  position: relative !important;
+/* Oculta o desconto ao lado do preço */
+.product-price-container [class*="discount"],
+.product-price-container .label-discount,
+.product-price-container .badge-discount,
+.product-price-container span[class*="off"] {
+    display: none !important;
 }
 
-/* Transforma o texto do % OFF em um selo quadrado fixo no topo da foto (VITRINE) */
-.item-price span:not(.js-price-display):not(.js-compare-price-display),
-.price-container span:not(.js-price-display):not(.js-compare-price-display),
-.item-info span[class*="discount"] {
-  position: absolute !important;
-  bottom: 100% !important;
-  top: -280px !important; /* Move a tag para cima, sobre o topo da foto */
-  left: 10px !important;
-  z-index: 25 !important;
-  
-  background-color: #c81938 !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  font-size: 11px !important;
-  padding: 6px 8px !important;
-  border-radius: 4px !important;
-  line-height: 1 !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
-  display: inline-block !important;
-  white-space: nowrap !important;
-}
-
-/* Formata o selo de desconto nativo (caso exista na página de produto ou vitrine) */
+/* Posiciona o selo na foto */
+.label-discount,
+.badge-discount,
 [class*="label-discount"],
 [class*="badge-discount"] {
-  display: inline-block !important;
-  position: absolute !important;
-  top: 12px !important;
-  left: 12px !important;
-  right: auto !important;
-  bottom: auto !important;
-  z-index: 30 !important;
-  
-  background-color: #c81938 !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  font-size: 11px !important;
-  padding: 6px 8px !important;
-  border-radius: 4px !important;
-  line-height: 1 !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
-}
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    z-index: 50 !important;
 
-/* Oculta blocos de desconto que estiverem vazios */
-.badge-discount:empty,
-.label-discount:empty {
-  display: none !important;
+    background: rgba(200,25,56,.92) !important;
+    color: #fff !important;
+
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.15) !important;
 }
