@@ -201,7 +201,7 @@ label[data-filter-value="Pessego" i] .checkbox-icon { background-color: #FFDAB9 
 h1.js-product-name {
   font-size: 1.75rem !important;
   font-weight: 700 !important;
-  color: #333333 !important;
+  color: #000000 !important;
   margin-bottom: 0.75rem !important;
 }
 
@@ -210,7 +210,7 @@ h1.js-product-name {
 .js-price-display {
   font-size: 1.8rem !important;
   font-weight: 800 !important;
-  color: #c8192e !important;
+  color: #A01E2E !important;
 }
 
 /* Seletores de opções em texto (Tamanho, Estampa, etc.) */
@@ -244,7 +244,7 @@ h1.js-product-name {
 .js-prod-submit-form,
 .js-addtocart,
 .btn-buy {
-  background-color: #c8192e !important;
+  background-color: #A01E2E !important;
   border-color: #c8192e !important;
   border-radius: 8px !important;
   font-weight: 700 !important;
@@ -417,41 +417,3 @@ a.variant-option img,
 .label-discount:empty {
     display: none !important;
 }
-
-<script>
-(function () {
-    function removerDescontosZerados() {
-        document.querySelectorAll(
-            '.product-item-discount, .label-discount, .badge-discount'
-        ).forEach(function (elemento) {
-            var texto = elemento.textContent
-                .replace(/\s+/g, ' ')
-                .trim()
-                .toUpperCase();
-
-            if (
-                texto === '0% OFF' ||
-                texto === '0%OFF' ||
-                texto === '0 % OFF' ||
-                texto === '0%'
-            ) {
-                elemento.style.display = 'none';
-            }
-        });
-    }
-
-    // Executa ao carregar
-    removerDescontosZerados();
-
-    // A Nuvemshop pode atualizar a vitrine dinamicamente
-    // quando o cliente troca de categoria, filtro, paginação etc.
-    var observer = new MutationObserver(function () {
-        removerDescontosZerados();
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-})();
-</script>
