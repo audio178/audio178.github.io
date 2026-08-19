@@ -1282,12 +1282,15 @@ a.variant-option img,
 
 
 /* --------------------------------------------------------------------------
-   IMAGEM MAIS OPACA
+   IMAGEM PRINCIPAL MAIS OPACA
    -------------------------------------------------------------------------- */
 
-.product-item:has([data-store^="stock-product-"][data-store$="-0"]) img,
-.js-item-product:has([data-store^="stock-product-"][data-store$="-0"]) img,
-.js-product-container:has([data-store^="stock-product-"][data-store$="-0"]) img {
+/* Afeta somente a imagem principal/featured.
+   A imagem de hover do Ipanema permanece intacta. */
+
+.product-item:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-image-featured,
+.js-item-product:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-image-featured,
+.js-product-container:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-image-featured {
   opacity: 0.48 !important;
   filter: grayscale(15%) !important;
 }
@@ -1346,12 +1349,16 @@ a.variant-option img,
 
 @media (max-width: 767px) {
 
-  .product-item:has([data-store^="stock-product-"][data-store$="-0"]) img,
-  .js-item-product:has([data-store^="stock-product-"][data-store$="-0"]) img,
-  .js-product-container:has([data-store^="stock-product-"][data-store$="-0"]) img {
+  /* Imagem principal */
+  .product-item:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-image-featured,
+  .js-item-product:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-image-featured,
+  .js-product-container:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-image-featured {
     opacity: 0.48 !important;
+    filter: grayscale(15%) !important;
   }
 
+
+  /* Selo */
   .product-item:has([data-store^="stock-product-"][data-store$="-0"])::after,
   .js-item-product:has([data-store^="stock-product-"][data-store$="-0"])::after,
   .js-product-container:has([data-store^="stock-product-"][data-store$="-0"])::after {
