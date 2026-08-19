@@ -1268,3 +1268,100 @@ a.variant-option img,
   }
 
 }
+
+/* ========================================================================== 
+   PRODUTOS ESGOTADOS — DIFERENCIAÇÃO VISUAL NA VITRINE
+   ========================================================================== */
+
+/* Produto com estoque = 0 */
+.product-item:has([data-store^="stock-product-"][data-store$="-0"]),
+.js-item-product:has([data-store^="stock-product-"][data-store$="-0"]),
+.js-product-container:has([data-store^="stock-product-"][data-store$="-0"]) {
+  position: relative !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   IMAGEM MAIS OPACA
+   -------------------------------------------------------------------------- */
+
+.product-item:has([data-store^="stock-product-"][data-store$="-0"]) img,
+.js-item-product:has([data-store^="stock-product-"][data-store$="-0"]) img,
+.js-product-container:has([data-store^="stock-product-"][data-store$="-0"]) img {
+  opacity: 0.48 !important;
+  filter: grayscale(15%) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   PREÇO MAIS DISCRETO
+   -------------------------------------------------------------------------- */
+
+.product-item:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-price,
+.product-item:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-price-current,
+.js-item-product:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-price,
+.js-item-product:has([data-store^="stock-product-"][data-store$="-0"]) .product-item-price-current {
+  color: #999999 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   SELO ESGOTADO
+   -------------------------------------------------------------------------- */
+
+.product-item:has([data-store^="stock-product-"][data-store$="-0"])::after,
+.js-item-product:has([data-store^="stock-product-"][data-store$="-0"])::after,
+.js-product-container:has([data-store^="stock-product-"][data-store$="-0"])::after {
+  content: "ESGOTADO" !important;
+
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+
+  z-index: 1000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 6px 9px !important;
+
+  background: rgba(127, 29, 45, 0.94) !important;
+  color: #ffffff !important;
+
+  border-radius: 5px !important;
+
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: .3px !important;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   MOBILE
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+
+  .product-item:has([data-store^="stock-product-"][data-store$="-0"]) img,
+  .js-item-product:has([data-store^="stock-product-"][data-store$="-0"]) img,
+  .js-product-container:has([data-store^="stock-product-"][data-store$="-0"]) img {
+    opacity: 0.48 !important;
+  }
+
+  .product-item:has([data-store^="stock-product-"][data-store$="-0"])::after,
+  .js-item-product:has([data-store^="stock-product-"][data-store$="-0"])::after,
+  .js-product-container:has([data-store^="stock-product-"][data-store$="-0"])::after {
+    top: 8px !important;
+    left: 8px !important;
+
+    padding: 4px 6px !important;
+
+    font-size: 8px !important;
+    border-radius: 4px !important;
+  }
+
+}
